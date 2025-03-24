@@ -8,7 +8,7 @@ void *bse, *crt;
 int imp;
 
 void call(void){
-    // ... //scanf("%d", imp);
+    // ... //scanf("%d", &imp);
     *(int*)crt = 0;
 }
 
