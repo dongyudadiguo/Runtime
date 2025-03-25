@@ -8,11 +8,11 @@ void *bse, *crt;
 int imp;
 
 void call(void){
-    // ... //scanf("%d", &imp);
-    *(int*)crt = 0;
+    // scanf("%d", &imp);
+    // *(int*)crt = 0;
 }
 
-//void func_name(void){...}
+// void function(void){...}
 
 void (*funcs[])() = {call};//void (*funcs[])() = {call, ...};
 
