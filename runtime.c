@@ -1,25 +1,19 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-#define ERROR_MEMORY_REALLOCATION -1
+void call_init(void);
+void call_normal(void);
 
-void *bse, *crt;
-int imp;
+void (*imp)() = call_init;
+void *line, *bse, *crt;
 
-void call(void){
-    // scanf("%d", &imp);
-    // *(int*)crt = 0;
+void call_init(void){
+    imp = (*(void (**)(void))(line = bse = crt = malloc(sizeof(void (*)()))) = call_normal);
 }
+void call_normal(void){
+    //...
+    imp = *(void (**)(void))(crt = line);
+}// void function(void){...}
 
-// void function(void){...}
-
-void (*funcs[])() = {call};//void (*funcs[])() = {call, ...};
-
-int main(int argc, char const *argv[]){
-    bse = crt = malloc(256);if (!crt) return ERROR_MEMORY_REALLOCATION;
-    imp = *(int*)crt = 0;
-    while (1) funcs[imp]();
-}
+int main(){ while (1) imp();}
 
 // gcc runtime.c -o runtime.exe
