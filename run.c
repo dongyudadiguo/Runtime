@@ -1,10 +1,8 @@
-// void *bak, *bse, *crt;
+// void (*imp)() = init, *bak, *bse, *crt;
 // void init(void){...}
 // #include "run.h"
 
 #include <stdlib.h>
-
-void (*imp)() = init, *bak, *bse, *crt;
 
 void Back(void){ imp = *(void (**)(void))(crt = bak);}
 
