@@ -1,6 +1,6 @@
 // void *bak, *bse, *crt;
 // void init(void){...}
-// include "run.h"
+// #include "run.h"
 
 #include <stdlib.h>
 
