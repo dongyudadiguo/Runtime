@@ -1,5 +1,9 @@
-// void (*imp)() = init, *bak, *bse, *crt;
+// void (*imp)(), *bak, *bse, *crt;
+
 // void init(void){...}
+
+// void loop(void){...}
+
 // #include "run.h"
 
 #include <stdlib.h>
@@ -7,7 +11,11 @@
 void Back(void){ imp = *(void (**)(void))(crt = bak);}
 
 int main(){
-    (*(void (**)(void))(bak = bse = crt = malloc(sizeof(void (*)())))) = Back;
+    bak = bse = crt = malloc(sizeof(void (*)())*2);
+    (*(void(**)(void))crt) = loop;
+    (*(void(**)(void))(crt + sizeof(void(**)(void)))) = Back;
+    imp = Back;
+    init();
     while (1) imp();
 }
 
