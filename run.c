@@ -8,6 +8,8 @@
 
 // #include "run.h"
 
+// gcc *.c -o *.exe
+
 #include <stdlib.h>
 
 void Back(void){ imp = *(void (**)(void))(crt = bak);}
