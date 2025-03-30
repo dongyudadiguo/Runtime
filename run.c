@@ -4,6 +4,8 @@
 
 // void loop(void){...}
 
+// //void function(void){...}//void function(void){...}
+
 // #include "run.h"
 
 #include <stdlib.h>
