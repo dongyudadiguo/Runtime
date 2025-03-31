@@ -1,5 +1,5 @@
 // void (*imp)(), *bak, *bse, *crt;
-// void (*fun[10])(void) = {...};
+// void (*fun[])(void) = {...};
 // int fun_size = sizeof(fun) / sizeof(fun[0]);
 
 // void init(void){...}
