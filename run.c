@@ -10,7 +10,7 @@
 
 // #include "run.h"
 
-// gcc *.c -o *.exe
+// // gcc *.c -o *.exe
 
 #include <stdlib.h>
 
@@ -24,5 +24,3 @@ int main(){
     init();
     while (1) imp();
 }
-
-// gcc *.c -o *.exe
