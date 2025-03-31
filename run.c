@@ -1,26 +1,15 @@
-// void (*imp)(), *bak, *bse, *crt;
-// void (*fun[])(void) = {...};
-// int fun_size = sizeof(fun) / sizeof(fun[0]);
-
-// void init(void){...}
-
-// void loop(void){...}
-
-// //void function(void){...}//void function(void){...}
-
-// #include "run.h"
-
-// // gcc *.c -o *.exe
-
 #include <stdlib.h>
 
-void Back(void){ imp = *(void (**)(void))(crt = bak);}
+void (*imp)(), *bse, *crt;
+
+void function(void){
+    // ...
+}
 
 int main(){
-    bak = bse = crt = malloc(sizeof(void (*)())*2);
-    (*(void(**)(void))crt) = loop;
-    (*(void(**)(void))(crt + sizeof(void(**)(void)))) = Back;
-    imp = Back;
-    init();
+    (*(void(**)(void))(bse = crt = malloc(sizeof(void (*)())*2))) = function;
+    // ...
     while (1) imp();
 }
+
+// gcc *.c -o *.exe
