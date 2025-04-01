@@ -13,7 +13,7 @@ void load(void){
 
 
     
-    imp = (*(void(**)(void))(crt = bse);
+    imp = (*(void(**)(void))(crt = bse));
 }
 
 
