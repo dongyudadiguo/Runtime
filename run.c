@@ -1,17 +1,31 @@
-#include <windows.h>
+
+
 #include <stdlib.h>
 
+
+
 void (*imp)(), *bse, *crt;
+void (*fun[])(void) = {...};
+int fun_size = sizeof(fun) / sizeof(fun[0]);
 
-__declspec(dllexport) void (**rt_get_imp_ptr(void))(void) { return &imp; }
-__declspec(dllexport) void** rt_get_bse_ptr(void) { return &bse; }
-__declspec(dllexport) void** rt_get_crt_ptr(void) { return &crt; }
 
-int main(int argc, char const *argv[])
-{
-    imp = (*(void(**)(void))(bse = crt = malloc(sizeof(void (*)()))));
-    GetProcAddress(LoadLibrary(argv[1]), "load");
+void load(void){
+
+
+    
+    imp = (*(void(**)(void))(crt = bse));
+}
+
+
+
+int main(){
+    imp = (*(void(**)(void))(bse = crt = malloc(sizeof(void (*)())))) = load;
+    
+    
+    
     while (1) imp();
 }
 
-// gcc run.c -o run.exe
+
+
+// gcc *.c -o *.exe
