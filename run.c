@@ -4,7 +4,7 @@
 
 
 
-void (*imp)(), *bse, *crt;
+void (*imp)(), *bse, *crt, *std;
 void (*fun[])(void) = {...};
 int fun_size = sizeof(fun) / sizeof(fun[0]);
 
