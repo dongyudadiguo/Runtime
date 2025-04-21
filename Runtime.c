@@ -13,6 +13,6 @@ void starter(void)
 }
 
 int main(){
-    ptr = (*(int*)(buffer = ptr = malloc(sizeof(void *))) = 0);
-    while (1){ imp();}
+    imp = fun[ptr = (*(int*)(buffer = malloc(sizeof(void *))) = 0)];
+    while (1)imp();
 }
