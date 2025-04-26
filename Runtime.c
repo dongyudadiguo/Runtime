@@ -1,4 +1,3 @@
-void starter(void);
 
 int stack[];
 int stackPtr = 0;
