@@ -8,7 +8,7 @@ void STK(void){
 
 void *buffer;
 int ptr;
-void (*fun[])(void) = {};
+void (*fun[])(void) = {STK};
 void (*imp)(); 
 
 int main(){
